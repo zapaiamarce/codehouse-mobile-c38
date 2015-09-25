@@ -1,0 +1,21 @@
+.boton-gris{
+	color:red;
+	text-decoration: none;
+}
+
+.header-principal{
+	display: flex;
+	justify-content:space-between;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: #FFF059;
+	/*flex-direction: row | row-reverse | column | column-reverse;*/
+
+}
+
+body{
+	margin: 0;
+}
+a{
+	text-decoration: none;
+}
