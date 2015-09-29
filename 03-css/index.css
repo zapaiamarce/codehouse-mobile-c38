@@ -1,0 +1,97 @@
+/**********
+**********
+
+Dentro de un elemento de linea 
+nunca va un elemento de bloque
+
+
+los elementos que tengan position absolute
+se van a ubicar con respecto al primer
+padre ..... que no tenga position:static
+
+!!!!!!!!!
+!!!!!!!!!
+!!!!!!!!!
+!!!!!!!!!
+
+
+**********
+**********/
+
+
+body{
+	margin: 0;
+}
+
+/*section{
+	border: solid 2px black;
+}*/
+
+* {
+  box-sizing: border-box;
+}
+
+.banner{
+	background-color: red;
+	width: 100%;
+	height: 400px;
+	overflow: auto;
+	
+	position: relative;
+	font-size: 40px;
+	
+	/*border:solid 7px black;*/
+	/*padding-left: 30px;
+	padding-top: 100px;*/
+}
+
+.gran-x{
+	width: 200px;
+	height: 200px;
+	background-color: black;
+	/*
+	margin:10px 5px 40px 15px;
+	margin: arriba derecha abajo izquierda;
+	*/
+	margin: 80px auto 0;
+	/* quiere decir:
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+	*/
+}
+
+.purchase-link{
+	width: 200px;
+	height: 50px;
+	background-color: yellow;
+	display: block;
+	/* por defecto tiene position:static */
+
+	position: absolute;
+	left: 50%;
+	margin-left: -100px;
+	bottom: 0;
+	/*position: fixed;*/
+}
+.purchase-link span{
+	display: block;
+	font-size: 20px;
+}
+
+.menu-principal{
+	background-color: violet;
+	width: 100%;
+	height: 40px;
+	overflow: auto;
+}
+.menu-principal ul{
+	padding: 0;
+	margin: 0;
+	margin-left: 20px;
+}
+.menu-principal ul li{
+	display: inline-block;
+	margin-right: 50px;
+}
