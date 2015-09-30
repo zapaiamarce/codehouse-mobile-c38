@@ -30,6 +30,30 @@ body{
 * {
   box-sizing: border-box;
 }
+.fb{
+	display: flex;
+	/*justify-content:center;*/
+	height: 300px;
+	align-items:center;
+	/*flex-wrap: wrap;*/
+	/*display: block;
+	 por defecto para section,div,body
+	display: inline;
+	 por defecto span, a
+	
+	display: inline-block;
+	 por defecto de button*/
+}
+
+.hijo{
+	margin: 10px;
+	width: 30px;
+	border: solid 3px blue;
+}
+
+.gr{
+	flex-grow:1;
+}
 
 .banner{
 	background-color: red;
