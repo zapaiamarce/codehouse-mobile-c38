@@ -1,0 +1,17 @@
+.contenedor{
+	height: 600px;
+	border: solid 4px red;
+	background-image: url(http://lorempixel.com/500/500/animals/);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center center;
+}
+
+.jugando-con-ionic{
+	font-size: 80px;
+	color:red;
+}
+
+.col{
+	background-color: gray;
+}
