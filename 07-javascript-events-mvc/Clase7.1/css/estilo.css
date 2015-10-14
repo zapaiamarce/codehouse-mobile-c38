@@ -1,0 +1,14 @@
+
+div {
+	min-height: 10px;
+	margin-bottom: 5px;
+}
+
+.contenido {
+	border: 1px solid black;
+}
+
+.salida {
+	padding: 5px;
+	border: 1px solid blue;
+}
