@@ -6,11 +6,14 @@
         <h2>{{chat.name}}</h2>
         <p>{{chat.lastText}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
-
+        <ion-option-button class="button-positive" ng-click="edit(chat)">
+          Edit
+        </ion-option-button>
         <ion-option-button class="button-assertive" ng-click="remove(chat)">
           Delete
         </ion-option-button>
       </ion-item>
     </ion-list>
+    <chat-input ng-controller="AddChat"/>
   </ion-content>
 </ion-view>

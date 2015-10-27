@@ -31,6 +31,17 @@ angular.module('starter.services', [])
     face: 'https://pbs.twimg.com/profile_images/578237281384841216/R3ae1n61.png'
   }];
 
+  var currentChatID = -1;
+  var nextId = -1;
+
+  for (var i = chats.length - 1; i >= 0; i--) {
+    if (chats[i].id > nextId) {
+      nextId = chats[i].id;
+    }
+  }
+
+  nextId = nextId + 1;
+
   return {
     all: function() {
       return chats;
@@ -45,6 +56,33 @@ angular.module('starter.services', [])
         }
       }
       return null;
+    },
+    create: function (name, lastText, face) {
+
+      return {
+        id: -1,
+        name: name,
+        lastText: lastText,
+        face: 'https://pbs.twimg.com/profile_images/578237281384841216/R3ae1n61.png'
+      };
+    },
+    add: function (chat){
+
+      chat.id = nextId; //le asigno un id válido
+      nextId = nextId + 1; //incremento next id
+
+      chats.push(chat); //Lo agrego a la lista de chats
+    },
+
+    save: function (chat, name, lastText){
+      chat.name = name;
+      chat.lastText = lastText;
+    },
+    current: function(chatId) {
+      if(chatId || chatId === 0) {
+        currentChatID = chatId;
+      }
+      return currentChatID;
     }
   };
 });
