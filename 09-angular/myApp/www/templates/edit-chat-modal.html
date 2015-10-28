@@ -4,6 +4,7 @@
     <button class="button button-assertive" ng-click="modal.hide()">close</button>
   </ion-header-bar>
   <ion-content>
-    <chat-input ng-controller="EditChat"/>
+    <chat-input name="{{chat.name}}" last-message="{{chat.lastText}}" callback="save"/>
+    <!-- <chat-input /> -->
   </ion-content>
 </ion-modal-view>

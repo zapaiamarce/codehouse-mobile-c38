@@ -27,6 +27,16 @@ angular.module('starter.controllers', [])
     $scope.chat = chat;
     $scope.modal.show();
   };
+
+  $scope.add = function(name, lastMessage){
+    var chat = Chats.create(name, lastMessage);
+    Chats.add(chat);
+  };
+
+  $scope.save = function(name, lastMessage) {
+    Chats.save($scope.chat, name, lastMessage);
+    $scope.modal.hide();
+  }
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
@@ -39,30 +49,42 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('AddChat', function($scope, Chats) {
-  $scope.add = function() {
-    var chat = Chats.create($scope.name, $scope.lastMessage);
-    Chats.add(chat);
+// .controller('AddChat', function($scope, Chats) {
+//   $scope.add = function() {
+//     var chat = Chats.create($scope.name, $scope.lastMessage);
+//     Chats.add(chat);
 
-    $scope.name = '';
-    $scope.lastMessage = '';
-  };
-})
+//     $scope.name = '';
+//     $scope.lastMessage = '';
+//   };
+// })
 
-.controller('EditChat', function($scope, Chats) {
-  $scope.save = function() {
+// .controller('EditChat', function($scope, Chats) {
+//   $scope.save = function() {
     
-    Chats.save(chat);
-    $scope.name = '';
-    $scope.lastMessage = '';
-  };
-})
+//     Chats.save(chat);
+//     $scope.name = '';
+//     $scope.lastMessage = '';
+//   };
+// })
 
 .directive('chatInput', function() {
   return {
     templateUrl: 'templates/chat-input.html',
     scope: {
-      chat: "&?"
+      callback: "&",
+      name: "@?",
+      lastMessage: "@?"
+    },
+    link: function(scope, element, attrs){
+        scope.callback = scope.callback();
+        scope.act = function(name, lastMessage){
+          console.log(attrs);
+          scope.callback(name, lastMessage);
+
+          scope.name = '';
+          scope.lastMessage = '';
+        }
     }
   };
 });
